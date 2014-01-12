@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Jerome V. Angeles
+ * Copyright (C) 2014 Shekainah
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,20 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package APPS;
+package Database;
 
 /**
- * @author Jerome
+ *
+ * @author Shekainah
  */
-
-import java.awt.Font;
-import GUI.LoginScreen;
-
-
-public class MAIN {
-    public static String ConnectionString /*= "Insert STRING HERE"*/;
-    public static void main(String[] args) {
-        LoginScreen.main(args);
-    }
-    
+public enum UserPositions {
+    Admin,Guest;
 }
