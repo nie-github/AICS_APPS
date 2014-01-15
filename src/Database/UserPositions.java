@@ -19,7 +19,7 @@ package Database;
 
 /**
  *
- * @author Shekainah
+ * @author Jerome V. Angeles
  */
 public enum UserPositions {
     Admin,Guest;

@@ -31,12 +31,9 @@ import sun.jdbc.odbc.JdbcOdbcDriver;
  *      this class.
  *  -   This class alone will do nothing but the ones presented above and
  *      it only provide what it will provide.
- * 
- * Methods
- *  -  
  */
 public class Base {
-    static String database = "jdbc:odbc:APPSDatabase";
+    protected static String database = "jdbc:odbc:APPSDatabase";
     protected static Connection staticConnection;
     protected static Statement staticStatement;
     protected static ResultSet staticResultSet;
