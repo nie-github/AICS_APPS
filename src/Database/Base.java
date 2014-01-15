@@ -37,6 +37,9 @@ import sun.jdbc.odbc.JdbcOdbcDriver;
  */
 public class Base {
     static String database = "jdbc:odbc:APPSDatabase";
+    protected static Connection staticConnection;
+    protected static Statement staticStatement;
+    protected static ResultSet staticResultSet;
     protected Connection connection;
     protected Statement statement;
     protected ResultSet resultSet;
