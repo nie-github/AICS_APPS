@@ -17,6 +17,8 @@
 
 package GUI;
 
+import Database.User;
+
 /**
  *
  * @author Jerome
@@ -125,6 +127,7 @@ public class LoginScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        System.out.print(User.verifyInputs(jTextField1.getText(), jTextField2.getText()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

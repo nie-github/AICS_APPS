@@ -33,7 +33,7 @@ import sun.jdbc.odbc.JdbcOdbcDriver;
  *      it only provide what it will provide.
  */
 public class Base {
-    protected static String database = "jdbc:odbc:APPSDatabase";
+    protected static String connectionString = "jdbc:odbc:APPSDatabase";
     protected static Connection staticConnection;
     protected static Statement staticStatement;
     protected static ResultSet staticResultSet;
@@ -43,7 +43,7 @@ public class Base {
     
     public void initialize(){
         try{
-            connection = DriverManager.getConnection(database);
+            connection = DriverManager.getConnection(connectionString);
             statement = connection.createStatement();
             System.out.print("yeah");
         }

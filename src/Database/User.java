@@ -58,7 +58,7 @@ public class User extends Base{
         boolean resultToBeReturned = false;
         String command = "Select * from Users where Username = '" + username + "';";
         try{
-            staticConnection = DriverManager.getConnection(database);
+            staticConnection = DriverManager.getConnection(connectionString);
             staticStatement = staticConnection.createStatement();
             staticResultSet = staticStatement.executeQuery(command);
             while(staticResultSet.next()){
