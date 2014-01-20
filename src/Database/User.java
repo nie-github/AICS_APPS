@@ -49,29 +49,30 @@ public class User extends Base{
         return new User();
     }
     
-    public void save(){
-        
-    }
-    
-    public boolean verifyInputs(String username, String password){
-        String realUsername = "";
-        String realPassword = "";
-        boolean returnValue = false;
+    /**
+     * @param username The username required
+     * @param password The password required
+     * @return Whether the username and password supplied will match something at the database
+    */
+    public static boolean verifyInputs(String username, String password){
+        boolean resultToBeReturned = false;
         String command = "Select * from Users where Username = '" + username + "';";
         try{
-            resultSet = statement.executeQuery(command);
-            while(resultSet.next()){
-                realUsername = resultSet.getString("Username");
-                realPassword = resultSet.getString("_Password");
+            staticConnection = DriverManager.getConnection(connectionString);
+            staticStatement = staticConnection.createStatement();
+            staticResultSet = staticStatement.executeQuery(command);
+            while(staticResultSet.next()){
+                String realUsername = staticResultSet.getString("Username");
+                String realPassword = staticResultSet.getString("_Password");
                 if(realUsername.equals(username) && realPassword.equals(realPassword)){
-                    returnValue = true;
+                    resultToBeReturned = true;
                 }                    
             }
         }
         catch(SQLException e){
             System.out.print(e.getMessage());
         }
-        return returnValue;
+        return resultToBeReturned;
     }
 
     /**
